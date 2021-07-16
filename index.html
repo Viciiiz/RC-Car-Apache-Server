@@ -4,42 +4,7 @@
 <head>
     <title>RC Car Joystick</title>
     <meta charset="utf-8">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0px;
-            padding: 0px;
-            font-family: monospace;
-        }
-
-        #joy3Div {
-            width: 200px;
-            height:200px;
-            margin:50px;
-            margin: 0px auto;
-            
-
-        }
-
-        .joy3DivValue {
-            
-        }
-
-        .div_wrap {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .header_text {
-            margin: 20px;
-            font-size: 4rem;
-        }
-
-    </style>
+    <link rel="Stylesheet" href="style.css"/>
     <script src="/Open-Joystick/joy.js"></script>
 </head>
 
@@ -58,6 +23,31 @@
         </div>
     </div>
 
+
+    <div class="buttons_container">
+        <div class="buttons_container_first_row">
+            <form class = "button_form" action = "index.php" method = "post">
+                <input class = "button" type = "submit" name = "left" value = "<">
+                <input class = "button" type = "submit" name = "front" value = "^">
+                <input class = "button" type = "submit" name = "right" value = ">">
+            </form>
+        </div>
+        <div class="buttons_container_second_row">
+            <label  class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="buttons_container_third_row">
+            <form class = "button_form" action = "index.php" method = "post">
+                <input class = "button" type = "submit" name = "back_left" value = "<">
+                <input class = "button" type = "submit" name = "back_front" value = "v">
+                <input class = "button" type = "submit" name = "back_right" value = ">">
+            </form>
+        </div>
+    </div>
+
+
     <script type="text/javascript">
     
         var joy3Param = {
@@ -74,6 +64,8 @@
         setInterval(function() {
             joy3Y.value = Joy3.GetY();
         }, 50);
+
+        
     </script>
 </body>
 
